@@ -1,5 +1,6 @@
 const {Inngest} = require('inngest')
 const User = require('../models/user.model')
+const connectToDB = require("../configs/db");
 
 // create a client to send and receive events
 
@@ -25,6 +26,8 @@ const syncUserCreation = inngest.createFunction(
     {id:"sync-user-from-clerk"},
     {event:'clerk/user.created'},
     async ({event}) =>{
+
+         await connectToDB();
         const {clerkUserId , name , email , image} =  getUserPayload(event.data);
 
         if(!clerkUserId || !email){
