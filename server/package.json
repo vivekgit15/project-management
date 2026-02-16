@@ -16,9 +16,8 @@
     "dotenv": "^17.2.4",
     "express": "^5.2.1",
     "inngest": "^3.52.0",
-    "mongoose": "^9.2.1"
-  },
-  "devDependencies": {
-
+    "mongodb": "^7.1.0",
+    "mongoose": "^9.2.1",
+    "svix": "^1.85.0"
   }
 }
